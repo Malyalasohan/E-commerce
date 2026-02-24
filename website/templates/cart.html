@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dynamic Pricing</title>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/cart.css') }}">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav id="nav">
+        <ul>
+          <li><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="{{ url_for('shop') }}">Shop</a></li>
+          <li><a href="{{ url_for('about') }}">About Us</a></li>
+        </ul>
+    
+        <div id="search-container">
+            <input type="text" placeholder="Search...">
+            <i class="fas fa-search"></i>
+        </div>
+    
+        <a href="{{ url_for('cart') }}"><i class="fas fa-shopping-cart" id="cart-icon"></i></a>
+        <a href="{{ url_for('feedback') }}"><button id="feedback-btn" class="btn">Feedback</button></a>
+        <a href="{{ url_for('signup') }}"><button id="signup-btn" class="btn">Sign Up</button></a>
+    </nav>
+
+    <!-- Cart Section -->
+    <div class="cart-wrapper">
+        <div class="cart-container">
+            <h2 class="cart-title">Your Shopping Cart</h2>
+            <p id="cart-message" class="cart-message">No items in cart</p>
+            <p id="cart-total" class="cart-total hidden">Total: ₹0.00</p>
+            <button id="checkout-btn" class="checkout-btn hidden">Proceed to Checkout</button>
+        </div>
+    </div>
+    
+    
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='script/cart.js')}}"></script>
+
+</body>
+</html>

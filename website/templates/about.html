@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Dynamic Pricing</title>
+    
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/about.css') }}?v=1">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav id="nav">
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('shop') }}">Shop</a></li>
+            <li><a href="{{ url_for('about') }}" class="active">About Us</a></li>
+        </ul>
+        <div id="search-container">
+            <input type="text" placeholder="Search...">
+            <i class="fas fa-search"></i>
+        </div>
+        <a href="{{ url_for('cart') }}"><i class="fas fa-shopping-cart" id="cart-icon"></i></a>
+        <a href="{{ url_for('feedback') }}"><button class="btn">Feedback</button></a>
+        <a href="{{ url_for('signup') }}"><button class="btn">Sign Up</button></a>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about">
+        <h1>About Dynamic Pricing</h1>
+        <p>Our dynamic pricing platform is a revolutionary marketplace that leverages real-time data analytics to offer optimized prices for customers. By integrating AI-driven insights, we ensure fair pricing strategies that benefit both buyers and sellers.</p>
+
+        <h2>Why Our Website Stands Out?</h2>
+        <ul>
+            <li><strong>AI-Driven Pricing:</strong> Our system adjusts prices dynamically based on demand, competition, and market trends.</li>
+            <li><strong>Transparency & Trust:</strong> We ensure customers get the best deals without hidden charges or sudden price hikes.</li>
+            <li><strong>Real-Time Analytics:</strong> Our technology continuously monitors the market to adjust prices accordingly.</li>
+            <li><strong>User-Friendly Experience:</strong> Our sleek and intuitive interface makes shopping seamless.</li>
+        </ul>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+        <h2>Frequently Asked Questions (FAQs)</h2>
+        <div class="faq-item">
+            <h3>What is dynamic pricing?</h3>
+            <p>Dynamic pricing is a strategy that adjusts product prices in real-time based on factors like demand, competition, and supply, ensuring the best possible value for customers.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How does your pricing algorithm work?</h3>
+            <p>Our AI-driven algorithm analyzes market trends and adjusts prices dynamically to balance affordability and profitability.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Why should I trust your website?</h3>
+            <p>We prioritize transparency, offering fair pricing and detailed breakdowns of price changes to ensure customers are always informed.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How is your platform different from other e-commerce sites?</h3>
+            <p>Unlike static pricing models, our dynamic pricing adapts to real-world scenarios, ensuring customers always get the best possible price.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="follow">
+            <h4>Connect with Us</h4>
+            <ul>
+                <li><a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+                <li><a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
+                <li><a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a></li>
+                <li><a href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
+                <li><a href="#"><i class="fa-brands fa-youtube"></i> YouTube</a></li>
+            </ul>
+            <p>&copy; {{ current_year }} Dynamic Pricing</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript File -->
+    <script src="{{ url_for('static', filename='script/about.js') }}?v=1"></script>
+</body>
+</html>

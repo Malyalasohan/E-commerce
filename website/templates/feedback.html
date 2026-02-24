@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dynamic Pricing</title>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/feedback.css') }}">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav id="nav">
+        <ul>
+          <li><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="{{ url_for('shop') }}">Shop</a></li>
+          <li><a href="{{ url_for('about') }}">About Us</a></li>
+        </ul>
+    
+        <div id="search-container">
+            <input type="text" placeholder="Search...">
+            <i class="fas fa-search"></i>
+        </div>
+    
+        <a href="{{ url_for('cart') }}"><i class="fas fa-shopping-cart" id="cart-icon"></i></a>
+        <a href="{{ url_for('feedback') }}"><button id="feedback-btn" class="btn">Feedback</button></a>
+        <a href="{{ url_for('signup') }}"><button id="signup-btn" class="btn">Sign Up</button></a>
+    </nav>
+
+    <!-- Feedback Section -->
+<section id="feedback-section">
+    <div class="feedback-container">
+        <h2>Help us improve</h2>
+        <select id="order-select">
+            <option value="" disabled selected>Select your recent order</option>
+            <option value="Nike Shoes">Nike Shoes</option>
+            <option value="Apple AirPods">Apple AirPods</option>
+            <option value="Boat Headphones">Boat Headphones</option>
+        </select>
+        <textarea id="feedback-text" placeholder="Write your feedback here..."></textarea>
+        <button id="submit-feedback">Submit</button>
+    </div>
+</section>
+
+<!-- Compare Product Pricing Section -->
+<section id="compare-section">
+    <div class="compare-container">
+        <h2>Compare Product Pricing</h2>
+        <input type="text" id="product-name" placeholder="Enter product name">
+        <button id="compare-btn">Compare Prices</button>
+        <div id="price-results"></div>
+        <button id="notify-btn">Get Notified on WhatsApp</button>
+    </div>
+</section>
+
+<!-- Scripts -->
+<script src="{{ url_for('static', filename='script/feedback.js')}}"></script>
+
+</body>
+</html>

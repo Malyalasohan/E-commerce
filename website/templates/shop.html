@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop - Dynamic Pricing</title>
+  
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  
+  <!-- CSS Link -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/shop.css') }}?v=1">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav id="nav">
+        <ul>
+          <li><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="{{ url_for('shop') }}" class="active">Shop</a></li>
+          <li><a href="{{ url_for('about') }}">About Us</a></li>
+        </ul>
+    
+        <div id="search-container">
+            <input type="text" placeholder="Search...">
+            <i class="fas fa-search"></i>
+        </div>
+    
+        <a href="{{ url_for('cart') }}"><i class="fas fa-shopping-cart" id="cart-icon"></i></a>
+        <a href="{{ url_for('feedback') }}"><button class="btn">Feedback</button></a>
+        <a href="{{ url_for('signup') }}"><button class="btn">Sign Up</button></a>
+    </nav>
+
+    <!-- Shop Header -->
+    <header class="shop-header">
+        <h1>Explore Our Products</h1>
+        <p>Find the best deals with dynamic pricing</p>
+    </header>
+
+    <!-- Product Section -->
+    <section class="products">
+        {% for i in range(1, 10) %}
+        <div class="product-card">
+            <img src="{{ url_for('static', filename='images/product' ~ i ~ '.jpg') }}" alt="Product {{ i }}">
+            <h3 class="product-name">Product {{ i }}</h3>
+            <p>Price: <span class="product-price">₹{{ (i * 20) + 49 }}</span></p>
+            <div class="product-buttons">
+                <button class="btn buy-now">Buy Now</button>
+                <button class="btn add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+        {% endfor %}
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="follow">
+            <h4>Connect with Us</h4>
+            <ul>
+                <li><a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+                <li><a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
+                <li><a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a></li>
+                <li><a href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
+                <li><a href="#"><i class="fa-brands fa-youtube"></i> YouTube</a></li>
+            </ul>
+            <p>&copy; {{ current_year }} Dynamic Pricing</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript File -->
+    <script src="{{ url_for('static', filename='script/shop.js') }}?v=1"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dynamic Pricing</title>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav id="nav">
+        <ul>
+          <li><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="{{ url_for('shop') }}">Shop</a></li>
+          <li><a href="{{ url_for('about') }}">About Us</a></li>
+        </ul>
+    
+        <div id="search-container">
+            <input type="text" placeholder="Search...">
+            <i class="fas fa-search"></i>
+        </div>
+    
+        <a href="{{ url_for('cart') }}"><i class="fas fa-shopping-cart" id="cart-icon"></i></a>
+        <a href="{{ url_for('feedback') }}"><button id="feedback-btn" class="btn">Feedback</button></a>
+        <a href="{{ url_for('signup') }}"><button id="signup-btn" class="btn">Sign Up</button></a>
+    </nav>
+
+    <!-- Background Video -->
+    <video autoplay loop muted>
+        <source src="{{ url_for('static', filename='videos/video.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Main Content -->
+    <div id="main">
+        <div id="page1">
+            <h1>Dynamic Pricing</h1>
+            <h2>Revolutionizing Pricing Models</h2>
+            <p>Experience real-time price adjustments based on demand, competition, and other market factors.</p>
+        </div>
+
+        <!-- Scrolling Brand Logos -->
+        <div id="page2">
+            <div id="scroller">
+                <div id="scroller-in">
+                    <img src="{{ url_for('static', filename='images/adidas_logo.jpg') }}" alt="Adidas logo" />
+                    <img src="{{ url_for('static', filename='images/nike_logo.jpg') }}" alt="Nike logo" />
+                    <img src="{{ url_for('static', filename='images/rarerabbit_logo.jpg') }}" alt="RareRabbit logo" />
+                    <img src="{{ url_for('static', filename='images/Loreal_paris_logo.jpg') }}" alt="L'Oreal Paris logo" />
+                    <img src="{{ url_for('static', filename='images/mamaearth_logo.jpg') }}" alt="Mamaearth logo" />
+                    <img src="{{ url_for('static', filename='images/aqualogica_logo.jpg') }}" alt="Aqualogica logo" />
+                    <img src="{{ url_for('static', filename='images/boat_logo.jpg') }}" alt="Boat logo" />
+                    <img src="{{ url_for('static', filename='images/hp_logo.jpg') }}" alt="HP logo" />
+                    <img src="{{ url_for('static', filename='images/zara_logo.jpg') }}" alt="Zara logo" />
+                    <img src="{{ url_for('static', filename='images/apple_logo.jpg') }}" alt="Apple logo" />
+                </div>
+            </div>
+
+            <!-- Categories Section -->
+            <div id="categories">
+                <div class="card" id="fashion">
+                    <img src="{{ url_for('static', filename='images/fashion.jpg') }}" alt="Fashion">
+                    <h4>Fashion</h4>
+                </div>
+                <div class="card" id="electronics">
+                    <img src="{{ url_for('static', filename='images/electronics.jpg') }}" alt="Electronics">
+                    <h4>Electronics</h4>
+                </div>
+                <div class="card" id="lifestyle">
+                    <img src="{{ url_for('static', filename='images/lifestyle.jpg') }}" alt="Lifestyle">
+                    <h4>Lifestyle</h4>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dynamic Pricing Prediction -->
+        <div id="page3">
+            <div id="chatbox">
+                <h2>Dynamic Pricing Prediction</h2>
+                <div id="input-container">
+                    <input type="text" id="product-name" placeholder="Enter product name...">
+                    <button class="btn" onclick="predictPrice()">Predict</button>
+                </div>
+                <p id="result"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+      <div class="follow">
+          <h4>Connect with Us</h4>
+          <ul>
+              <li><a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+              <li><a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
+              <li><a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a></li>
+              <li><a href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
+              <li><a href="#"><i class="fa-brands fa-youtube"></i> YouTube</a></li>
+          </ul>
+          <p>© Copyright - Dynamic Pricing</p>
+      </div>
+  </div>
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='script/script.js')}}"></script>
+
+</body>
+</html>
